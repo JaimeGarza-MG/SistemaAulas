@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="edu.ufg.plantillaaulas.controladores.HomeController"
+      spacing="16"
+      prefWidth="760"
+      prefHeight="620"
+      style="-fx-background-color: #f4f6fa;">
+
+    <padding>
+        <Insets top="28" right="36" bottom="28" left="36"/>
+    </padding>
+
+    <HBox alignment="CENTER_LEFT" spacing="16">
+        <Label text="Registro de aulas"
+               style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: #17365d;"/>
+
+        <Region HBox.hgrow="ALWAYS"/>
+
+        <Button text="Cerrar sesión"
+                onAction="#cerrarSesion"/>
+    </HBox>
+
+    <Label text="Completa los datos para registrar un aula."
+           style="-fx-font-size: 14px;"/>
+
+    <GridPane hgap="20" vgap="14">
+
+        <columnConstraints>
+            <ColumnConstraints percentWidth="50"
+                               hgrow="ALWAYS"/>
+            <ColumnConstraints percentWidth="50"
+                               hgrow="ALWAYS"/>
+        </columnConstraints>
+
+        <VBox spacing="6"
+              GridPane.columnIndex="0"
+              GridPane.rowIndex="0">
+            <Label text="Nombre o código del aula"/>
+            <TextField fx:id="txtNombre"
+                       promptText="Ejemplo: B-204"
+                       prefHeight="36"/>
+        </VBox>
+
+        <VBox spacing="6"
+              GridPane.columnIndex="1"
+              GridPane.rowIndex="0">
+            <Label text="Edificio"/>
+            <TextField fx:id="txtEdificio"
+                       promptText="Ejemplo: Edificio B"
+                       prefHeight="36"/>
+        </VBox>
+
+        <VBox spacing="6"
+              GridPane.columnIndex="0"
+              GridPane.rowIndex="1">
+            <Label text="Planta"/>
+            <ComboBox fx:id="cmbPlanta"
+                      promptText="Selecciona una planta"
+                      maxWidth="Infinity"
+                      prefHeight="36"/>
+        </VBox>
+
+        <VBox spacing="6"
+              GridPane.columnIndex="1"
+              GridPane.rowIndex="1">
+            <Label text="Capacidad"/>
+            <TextField fx:id="txtCapacidad"
+                       promptText="Cantidad de personas"
+                       prefHeight="36"/>
+        </VBox>
+
+        <VBox spacing="6"
+              GridPane.columnIndex="0"
+              GridPane.rowIndex="2">
+            <Label text="Tipo de aula"/>
+            <ComboBox fx:id="cmbTipoAula"
+                      promptText="Selecciona un tipo"
+                      maxWidth="Infinity"
+                      prefHeight="36"/>
+        </VBox>
+
+        <VBox spacing="6"
+              GridPane.columnIndex="1"
+              GridPane.rowIndex="2">
+            <Label text="Estado"/>
+            <ComboBox fx:id="cmbEstado"
+                      promptText="Selecciona un estado"
+                      maxWidth="Infinity"
+                      prefHeight="36"/>
+        </VBox>
+
+        <VBox spacing="6"
+              GridPane.columnIndex="0"
+              GridPane.rowIndex="3"
+              GridPane.columnSpan="2">
+            <Label text="Responsable"/>
+            <TextField fx:id="txtResponsable"
+                       promptText="Nombre de la persona responsable"
+                       prefHeight="36"/>
+        </VBox>
+
+    </GridPane>
+
+    <HBox spacing="12">
+        <Button fx:id="btnGuardar"
+                text="Guardar aula"
+                onAction="#guardar"
+                prefHeight="40"
+                prefWidth="160"
+                style="-fx-background-color: #17365d; -fx-text-fill: white;"/>
+
+        <Button text="Limpiar"
+                onAction="#limpiar"
+                prefHeight="40"
+                prefWidth="120"/>
+    </HBox>
+
+    <Label fx:id="lblMensaje"
+           wrapText="true"
+           maxWidth="Infinity"/>
+
+</VBox>
