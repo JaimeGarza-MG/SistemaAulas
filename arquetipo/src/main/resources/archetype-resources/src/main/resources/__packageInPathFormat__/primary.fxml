@@ -1,0 +1,60 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="${package}.controladores.LoginController"
+      alignment="CENTER"
+      spacing="16"
+      prefWidth="640"
+      prefHeight="480"
+      style="-fx-background-color: ${symbol_pound}f4f6fa;">
+
+    <padding>
+        <Insets top="40" right="60" bottom="40" left="60"/>
+    </padding>
+
+    <Label text="Sistema de aulas"
+           style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: ${symbol_pound}17365d;"/>
+
+    <Label text="Ingresa tus datos para iniciar sesión."
+           style="-fx-font-size: 14px;"/>
+
+    <VBox spacing="8" maxWidth="320">
+        <Label text="Correo"/>
+
+        <TextField fx:id="txtCorreo"
+                   promptText="Escribe tu correo"
+                   prefHeight="38"/>
+
+        <Label text="Clave"/>
+
+        <PasswordField fx:id="txtClave"
+                       promptText="Escribe tu clave"
+                       prefHeight="38"
+                       onAction="${symbol_pound}ingresar"/>
+
+        <Button text="Ingresar"
+                onAction="${symbol_pound}ingresar"
+                defaultButton="true"
+                maxWidth="Infinity"
+                prefHeight="40"
+                style="-fx-background-color: ${symbol_pound}17365d; -fx-text-fill: white; -fx-font-size: 14px;"/>
+
+        <Label fx:id="lblMensaje"
+               text=""
+               wrapText="true"
+               maxWidth="320"
+               style="-fx-text-fill: ${symbol_pound}b3261e;"/>
+    </VBox>
+
+</VBox>
